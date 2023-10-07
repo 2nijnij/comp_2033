@@ -1,5 +1,11 @@
 package ca1.task4;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+
 public class CarProcessing {
 	public static void main(String[] args) {
 		
@@ -23,8 +29,17 @@ public class CarProcessing {
 		}
 	}
 	
-	public Car[] removeDuplicates(Car[] inputArray) {
-		return null;
-	}
-	
+    public Car[] removeDuplicates(Car[] inputArray) {
+        Set<Car> uniqueCars = new HashSet<>();
+        
+        List<Car> resultList = new ArrayList<>();
+
+        for (Car car : inputArray) {
+            if (uniqueCars.add(car)) {
+                resultList.add(car);
+            }
+        }
+
+        return resultList.toArray(new Car[0]);
+    }
 }
