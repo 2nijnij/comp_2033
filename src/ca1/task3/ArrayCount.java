@@ -25,6 +25,6 @@ public class ArrayCount {
 		
 		int result = count(numbers, target);
 		
-		System.out.println("The targe " + target + " appears " + result + " times in the array !");
+		System.out.println("The targe number " + "'" + target + "'" + " appears " + result + " times in the array !");
 	}
 }
