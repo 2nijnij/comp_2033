@@ -31,4 +31,11 @@ public class CarAndProcessingTest {
         assertFalse(car1.equals(car3), "car1 is not equal to car3");
 
 	}
+	
+    @Test
+    void testCarToString() {
+        Car car = new Car("Toyota", "Camry", "Blue");
+        String expected = "Toyota, Camry, Blue";
+        assertEquals(expected, car.toString(), "ToString() result should match the expected string");
+    }
 }
