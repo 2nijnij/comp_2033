@@ -3,9 +3,11 @@ package ca1.task3;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class ArrayCountTest {
+
+class ArrayCountTest {
 	
 	// Situation 1 (Target not in Array)
+	@Test
 	 void testCountTargetNotInArray() {
 	        int[] array = {1, 2, 3, 4, 5};
 	        int target = 6;
@@ -14,6 +16,7 @@ public class ArrayCountTest {
 	    }
 
 	// Situation 2 (Target appears only once in Array)
+	@Test
 	    void testCountTargetOnceInArray() {
 	        int[] array = {1, 2, 3, 4, 5};
 	        int target = 5;
@@ -22,7 +25,8 @@ public class ArrayCountTest {
 	    }
 	    
 	// Situation 3 (Target appears multiple times in Array)
-	    void testCountTargetMultipleTimesInArray() {
+	@Test    
+		void testCountTargetMultipleTimesInArray() {
 	        int[] array = {1, 2, 3, 4, 5, 5, 3, 5};
 	        int target = 5;
 	        int result = ArrayCount.count(array, target);
