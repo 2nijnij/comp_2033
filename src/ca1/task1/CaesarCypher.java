@@ -47,8 +47,9 @@ public class CaesarCypher {
 
         System.out.print("Enter an offset: ");
         int offset = scanner.nextInt();
-
         char[] result;
+        
+        //Allow system to ignore case error (IgnoreCase)
         if (choice.equalsIgnoreCase("encode")) {
             result = encode(message.toCharArray(), offset);
             System.out.println("Encoded: " + new String(result));
