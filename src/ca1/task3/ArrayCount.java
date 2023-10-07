@@ -2,6 +2,19 @@ package ca1.task3;
 
 public class ArrayCount {
 	public int count(String[] array, String target) {
-		return 0;
+		int count = 0;
+		
+		for(String num : array) {
+			if (num == target) {
+				count++;
+			}
+		}
+		
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		
+		
 	}
 }
