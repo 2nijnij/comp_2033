@@ -6,8 +6,13 @@ import org.junit.jupiter.api.Test;
 public class ArrayCountTest {
 	
 	// Situation 1 (Target not in Array)
-	
-	
+	 void testCountTargetNotInArray() {
+	        int[] array = {1, 2, 3, 4, 5};
+	        int target = 6;
+	        int result = ArrayCount.count(array, target);
+	        assertEquals(0, result, "Count of target in an array is 0");
+	    }
+
 	// Situation 2 (Target appears only once in Array)
 	
 	// Situation 3 (Target appears multiple times in Array)
