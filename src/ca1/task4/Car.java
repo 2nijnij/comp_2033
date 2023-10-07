@@ -33,4 +33,12 @@ public class Car {
     public String toString() {
         return make + ", " + model + ", " + color;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
 }
