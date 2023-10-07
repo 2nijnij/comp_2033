@@ -7,6 +7,7 @@ public class Car {
 	private String model;
 	private String color;
 	
+	// Constructor
 	public Car(String make, String model, String color) {
 		
 		this.make = make;
@@ -14,6 +15,7 @@ public class Car {
 		this.color = color;
 	}
 	
+	// Equals method for comparing two car objects based on make, model and color
 	@Override
 	public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,20 +26,24 @@ public class Car {
                Objects.equals(color, car.color);
 	}
 	
+	// Method to generate the hash code
     @Override
     public int hashCode() {
         return Objects.hash(make, model, color);
     }
-
+    
+    // Method to provide a string representation
     @Override
     public String toString() {
         return make + ", " + model + ", " + color;
     }
 
+    // Getter method to retrieve the model of the car
     public String getModel() {
         return model;
     }
-
+    
+    // Getter method to retrieve the color of the car
     public String getColor() {
         return color;
     }
