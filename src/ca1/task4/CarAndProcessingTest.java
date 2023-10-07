@@ -22,5 +22,13 @@ public class CarAndProcessingTest {
 
  }
 	@Test
-	
+	void testCarEquals() {
+        Car car1 = new Car("Toyota", "Camry", "Blue");
+        Car car2 = new Car("Toyota", "Camry", "Blue");
+        Car car3 = new Car("Honda", "Civic", "Red");
+
+        assertTrue(car1.equals(car2), "car1 is equal to car2");
+        assertFalse(car1.equals(car3), "car1 is not equal to car3");
+
+	}
 }
