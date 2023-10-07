@@ -38,4 +38,19 @@ public class CarAndProcessingTest {
         String expected = "Toyota, Camry, Blue";
         assertEquals(expected, car.toString(), "ToString() result should match the expected string");
     }
+    
+    @Test
+    void testRemoveDuplicates() {
+        CarProcessing cp = new CarProcessing();
+        Car[] noDuplicates = cp.removeDuplicates(cars);
+
+        assertEquals(5, noDuplicates.length, "Expected 5 unique cars");
+
+        // Check if the resulting array contains unique cars
+        for (int i = 0; i < noDuplicates.length; i++) {
+            for (int j = i + 1; j < noDuplicates.length; j++) {
+                assertFalse(noDuplicates[i].equals(noDuplicates[j]), "Found duplicate cars");
+            }
+        }
+    }
 }
