@@ -30,16 +30,17 @@ public class CarProcessing {
 	}
 	
     public Car[] removeDuplicates(Car[] inputArray) {
-        Set<Car> uniqueCars = new HashSet<>();
-        
-        List<Car> resultList = new ArrayList<>();
+        Set<String> carSet = new HashSet<>();
+        List<Car> uniqueCars = new ArrayList<>();
 
         for (Car car : inputArray) {
-            if (uniqueCars.add(car)) {
-                resultList.add(car);
+            String identifier = car.getModel() + "-" + car.getColor();
+
+            if (carSet.add(identifier)) {
+                uniqueCars.add(car);
             }
         }
 
-        return resultList.toArray(new Car[0]);
+        return uniqueCars.toArray(new Car[0]);
     }
 }
