@@ -38,7 +38,7 @@ public class CaesarCypher {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Method for user to choose encode or decode
-		System.out.println("Do you want to 'Encode' or 'Decode ?");
+		System.out.println("Do you want to 'Encode' or 'Decode'?");
 		String choice = scanner.nextLine();
 		
 		//Printed messages for encode and decode
