@@ -5,22 +5,32 @@ import java.util.Scanner;
 public class CaesarCypher {
 
 	// Encode function
+	public static char encodeChar(char c, int offset) {
+		if (Character.isLetter(c)) {
+			char base = Character.isLowerCase(c) ? 'a' : 'A';
+			return (char) (base + (c - base + offset) % 26);
+            }
+		return c;
+        }
+
+	
+	// Decode function
 	public static char[] encode(char[] input, int offset) {
+		for (int i = 0; i < input.length; i++) {
+			input[i] = encodeChar(input[i], offset);
+		}
+		return input;
+	}
+    
+    public static char[] decode(char[] input, int offset) {
         for (int i = 0; i < input.length; i++) {
-            char c = input[i];
-            if (Character.isLetter(c)) {
-                char base = Character.isLowerCase(c) ? 'a' : 'A';
-                input[i] = (char) (base + (c - base + offset) % 26);
+            if (Character.isLetter(input[i])) {
+                char base = Character.isLowerCase(input[i]) ? 'a' : 'A';
+                input[i] = (char) (base + (input[i] - base - offset + 26) % 26);
             }
         }
         return input;
-	}
-	
-	// Decode function
-	public static char[] decode(char[] input, int offset) {
-        return encode(input, -offset);
-	}
-
+    }
 	
 	// Use a Scanner so that users can enter the messages and an offset by themselves
 	public static void main(String[] args) {
