@@ -14,7 +14,7 @@ public class CaesarCypher {
 	}
 	
 	public static char[] decode(char[] input, int offset) {
-		return null;
+        return encode(input, -offset);
 	}
 
 	public static void main(String[] args) {
