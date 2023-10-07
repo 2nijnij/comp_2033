@@ -1,4 +1,5 @@
 package ca1.task1;
+import java.util.Scanner;
 
 public class CaesarCypher {
 
@@ -18,6 +19,19 @@ public class CaesarCypher {
 	}
 
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a message: ");
+        String message = scanner.nextLine();
 
+        System.out.print("Enter an offset: ");
+        int offset = scanner.nextInt();
+
+        char[] encodedMessage = encode(message.toCharArray(), offset);
+        System.out.println("Encoded: " + new String(encodedMessage));
+
+        char[] decodedMessage = decode(encodedMessage, offset);
+        System.out.println("Decoded: " + new String(decodedMessage));
+
+        scanner.close();
 	}
 }
