@@ -18,8 +18,15 @@ public class ArrayCountTest {
 	        int[] array = {1, 2, 3, 4, 5};
 	        int target = 3;
 	        int result = ArrayCount.count(array, target);
-	        assertEquals(1, result, "Count of target appearing once should be 1");
+	        assertEquals(1, result, "Count of target appearing in this array only once, should be 1");
 	    }
 	    
 	// Situation 3 (Target appears multiple times in Array)
+	    void testCountTargetMultipleTimesInArray() {
+	        int[] array = {1, 2, 3, 4, 3, 5, 3};
+	        int target = 3;
+	        int result = ArrayCount.count(array, target);
+	        assertEquals(3, result, "Count of target appearing multiple times in this array, should be 3");
+	    }
+
 }
