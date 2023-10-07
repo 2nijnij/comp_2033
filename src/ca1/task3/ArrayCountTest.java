@@ -14,6 +14,12 @@ public class ArrayCountTest {
 	    }
 
 	// Situation 2 (Target appears only once in Array)
-	
+	    void testCountTargetOnceInArray() {
+	        int[] array = {1, 2, 3, 4, 5};
+	        int target = 3;
+	        int result = ArrayCount.count(array, target);
+	        assertEquals(1, result, "Count of target appearing once should be 1");
+	    }
+	    
 	// Situation 3 (Target appears multiple times in Array)
 }
