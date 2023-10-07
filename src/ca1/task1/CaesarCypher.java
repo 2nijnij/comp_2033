@@ -34,19 +34,30 @@ public class CaesarCypher {
 	
 	// Use a Scanner so that users can enter the messages and an offset by themselves
 	public static void main(String[] args) {
+		
 		Scanner scanner = new Scanner(System.in);
+		
+		//Method for user to choose encode or decode
+		System.out.println("Do you want to 'Encode' or 'Decode ?");
+		String choice = scanner.nextLine();
+		
+		//Printed messages for encode and decode
         System.out.print("Enter a message: ");
         String message = scanner.nextLine();
 
         System.out.print("Enter an offset: ");
         int offset = scanner.nextInt();
 
-        char[] encodedMessage = encode(message.toCharArray(), offset);
-        System.out.println("Encoded: " + new String(encodedMessage));
-
-        char[] decodedMessage = decode(encodedMessage, offset);
-        System.out.println("Decoded: " + new String(decodedMessage));
-
+        char[] result;
+        if (choice.equalsIgnoreCase("encode")) {
+            result = encode(message.toCharArray(), offset);
+            System.out.println("Encoded: " + new String(result));
+        } else if (choice.equalsIgnoreCase("decode")) {
+            result = decode(message.toCharArray(), offset);
+            System.out.println("Decoded: " + new String(result));
+        } else {
+            System.out.println("Invalid choice. Please enter 'Encode' or 'Decode'.");
+        }
         scanner.close();
 	}
 }
