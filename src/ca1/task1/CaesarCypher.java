@@ -1,8 +1,10 @@
 package ca1.task1;
 import java.util.Scanner;
 
+
 public class CaesarCypher {
 
+	// Encode function
 	public static char[] encode(char[] input, int offset) {
         for (int i = 0; i < input.length; i++) {
             char c = input[i];
@@ -14,10 +16,13 @@ public class CaesarCypher {
         return input;
 	}
 	
+	// Decode function
 	public static char[] decode(char[] input, int offset) {
         return encode(input, -offset);
 	}
 
+	
+	// Use a Scanner so that users can enter the messages and an offset by themselves
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a message: ");
